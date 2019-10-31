@@ -10,7 +10,7 @@
     c_start = std::clock();         \
     statement;                      \
     c_end = std::clock() - c_start; \
-    std::cout << message << " running time:\t\t\t\t" << 1000.0 * c_end / CLOCKS_PER_SEC << " ms\n";
+    std::cout << message << " running time:\t\t" << 1000.0 * c_end / CLOCKS_PER_SEC << " ms\n";
 
 namespace string_matching
 {
