@@ -40,7 +40,7 @@ namespace string_matching
     }
 
     template <typename T>
-    std::vector<int> prefixFunction(T item, int length)
+    std::vector<int> prefix_function(T item, int length)
     {
         if (length <= 0) {
             throw std::invalid_argument("length");
