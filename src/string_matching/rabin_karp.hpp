@@ -26,9 +26,9 @@ namespace string_matching
             }
 
             long long decreasing_prefix = text[i];
-            long long increasing_prefix = (p_pows[pattern_length - 1] * text[i + pattern_length]) % HASH_CONSTRAINT;
+            long long increasing_suffix = (p_pows[pattern_length - 1] * text[i + pattern_length]) % HASH_CONSTRAINT;
 
-            text_hash = ((text_hash - decreasing_prefix) / DEFAULT_P + increasing_prefix) % HASH_CONSTRAINT;
+            text_hash = ((text_hash - decreasing_prefix) / DEFAULT_P + increasing_suffix) % HASH_CONSTRAINT;
         }
 
         return shifts;
