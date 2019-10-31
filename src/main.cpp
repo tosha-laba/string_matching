@@ -24,6 +24,10 @@ int main(int, char **)
         in >> text;
         in >> pattern;
 
+        if (pattern == "") {
+            continue;
+        }
+
         std::cout << "Test no. " << n_test << '\n';
         std::cout << "Text: \"" << text << "\"\n"
                   << "Pattern: \"" << pattern << "\"\n";
