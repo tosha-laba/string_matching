@@ -15,6 +15,8 @@ int main(int, char **)
 
     INIT_PERF;
 
+    in.peek();
+
     while (!in.eof()) {
         std::string text;
         std::string pattern;
