@@ -1,11 +1,13 @@
 #pragma once
 #include <exception>
+#include <set>
 #include <vector>
 
 namespace string_matching
 {
     const long long HASH_CONSTRAINT = 9223372036854775807;
     const int DEFAULT_P = 257;
+    const int ALPHABET_CAPACITY = 256;
 
     std::vector<long long> generate_p_pows(int count, int p = DEFAULT_P)
     {
@@ -64,6 +66,30 @@ namespace string_matching
         }
 
         return p;
+    }
+
+    bool is_unique_characters(const char *text, int length)
+    {
+        if (length > ALPHABET_CAPACITY) {
+            return false;
+        }
+
+        std::set<char> entries;
+
+        for (int i = 0; i < length; ++i) {
+            if (entries.find(text[i]) != entries.end())  {
+                return false;
+            }
+
+            entries.insert(text[i]);
+        }
+
+        return true;
+    }
+
+    bool is_unique_characters(std::string &text, int length)
+    {
+        return is_unique_characters(text.c_str(), length);
     }
 
 } // namespace string_matching
