@@ -2,6 +2,15 @@
 #include <exception>
 #include <set>
 #include <vector>
+#include <ctime>
+
+#define INIT_PERF clock_t c_start, c_end;
+
+#define PERF(statement, message)    \
+    c_start = std::clock();         \
+    statement;                      \
+    c_end = std::clock() - c_start; \
+    std::cout << message << " running time:\t\t\t\t" << 1000.0 * c_end / CLOCKS_PER_SEC << " ms\n";
 
 namespace string_matching
 {
