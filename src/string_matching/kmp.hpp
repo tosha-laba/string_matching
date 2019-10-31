@@ -11,13 +11,13 @@ namespace string_matching
         int text_length = std::strlen(text);
         int pattern_length = std::strlen(pattern);
 
-        std::string preproduce = std::string(pattern) + "#" + text;
+        std::string preproduce = std::string(pattern) + "\a" + text;
 
         std::vector<int> max_borders = prefix_function(preproduce, preproduce.length());
 
         for (int i = 0; i < text_length; ++i) {
             if (max_borders[pattern_length + i + 1] == pattern_length) {
-                shifts.push_back(i);
+                shifts.push_back(i - pattern_length + 1);
             }
         }
 
