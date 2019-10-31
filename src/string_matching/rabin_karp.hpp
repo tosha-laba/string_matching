@@ -20,7 +20,6 @@ namespace string_matching
         long long text_hash = calculate_hash(text, pattern_length, p_pows);
         long long pattern_hash = calculate_hash(pattern, pattern_length, p_pows);
 
-        // <= ???
         for (int i = 0; i <= text_length - pattern_length; ++i) {
             if (text_hash == pattern_hash) {
                 shifts.push_back(i);

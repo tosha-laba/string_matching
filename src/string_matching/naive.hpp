@@ -11,7 +11,6 @@ namespace string_matching
         int text_length = std::strlen(text);
         int pattern_length = std::strlen(pattern);
 
-        // ?
         for (int i = 0; i <= text_length - pattern_length; ++i) {
             bool is_valid_shift = true;
 
