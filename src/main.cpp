@@ -69,5 +69,13 @@ int main(int, char **)
 
         std::cout << "\n\n";
         out << "\n\n";
+
+        if (rk_shifts == kmp_shifts) {
+            std::cout << "Shifts are equal!\n\n";
+            out << "Shifts are equal!\n\n";
+        } else {
+            std::cout << "Shifts are not equal!\n\n";
+            out << "Shifts are not equal!\n\n";
+        }
     }
 }
